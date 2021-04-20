@@ -1,8 +1,12 @@
 import numpy as np
 import pickle
 import pandas as pd
-#from flasgger import Swagger
 import streamlit as st
+import tensorflow as tf
+import numpy as np
+from PIL import Image
+import requests
+from io import BytesIO
 
 from PIL import Image
 
@@ -22,10 +26,10 @@ def welcome():
 
 
 def predict_note_authentication(variance, skewness, curtosis, entropy):
-    """Let's Authenticate the Banks Note 
+    """Let's Authenticate the Banks Note
     This is using docstrings for specifications.
     ---
-    parameters:  
+    parameters:
       - name: variance
         in: query
         type: number
@@ -62,8 +66,8 @@ def main():
     """
 
     instructions = """
-    Either upload your own image or select from the sidebar to get a preconfigured image. 
-    The image you select or upload will be fed through the Deep Neural Network in real-time 
+    Either upload your own image or select from the sidebar to get a preconfigured image.
+    The image you select or upload will be fed through the Deep Neural Network in real-time
     and the output will be displayed to the screen.
         """
     st.write(instructions)
@@ -74,8 +78,10 @@ def main():
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
     }
     st.title("Here is the image you've selected")
+    resized_image = img.resize((336, 336))
+    st.image(resized_image)
 
-    st.markdown(html_temp, unsafe_allow_html=True)
+   ''' st.markdown(html_temp, unsafe_allow_html=True)
     variance = st.text_input("Variance", "Type Here")
     skewness = st.text_input("skewness", "Type Here")
     curtosis = st.text_input("curtosis", "Type Here")
@@ -88,7 +94,7 @@ def main():
     if st.button("About"):
         st.text("Lets LEarn")
         st.text("Built with Streamlit")
-
+'''
 
 if __name__ == '__main__':
     main()
