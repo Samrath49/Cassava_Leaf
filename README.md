@@ -1,1 +1,1 @@
-# Cassava Lead Disease Detection
+# Cassava Leaf Disease Detection
