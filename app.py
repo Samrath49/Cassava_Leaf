@@ -83,10 +83,10 @@ def main():
     if st.button("Predict"):
         result = predict_note_authentication(
             variance, skewness, curtosis, entropy)
-    st.success('The output is {}'.format(result))
+    st.success('Prediction is {}'.format(result))
     if st.button("About"):
         st.text("PathoAI")
-        st.text("A disease detection for Cassava Leaf Disease")
+        st.text("Prediction 0 means it's a healthy leaf else it is unhealthy")
 
 
 if __name__ == '__main__':
