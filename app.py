@@ -73,8 +73,7 @@ def main():
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
     }
-    st.title("Here is the image you've selected")
-
+    
     st.markdown(html_temp, unsafe_allow_html=True)
     variance = st.text_input("Enter CMP Value", "Type Here")
     skewness = st.text_input("Enter CSPG Value", "Type Here")
@@ -86,8 +85,8 @@ def main():
             variance, skewness, curtosis, entropy)
     st.success('The output is {}'.format(result))
     if st.button("About"):
-        st.text("Lets LEarn")
-        st.text("Built with Streamlit")
+        st.text("PathoAI")
+        st.text("A disease detection for Cassava Leaf Disease")
 
 
 if __name__ == '__main__':
