@@ -73,8 +73,7 @@ def main():
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
     }
-    st.title("Here is the image you've selected")
-
+    
     st.markdown(html_temp, unsafe_allow_html=True)
     variance = st.text_input("CSM Value", "Type Here")
     skewness = st.text_input("CGMP Value", "Type Here")
