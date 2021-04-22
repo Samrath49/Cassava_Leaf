@@ -76,15 +76,15 @@ def main():
     st.title("Here is the image you've selected")
 
     st.markdown(html_temp, unsafe_allow_html=True)
-    variance = st.text_input("Variance", "Type Here")
-    skewness = st.text_input("skewness", "Type Here")
-    curtosis = st.text_input("curtosis", "Type Here")
-    entropy = st.text_input("entropy", "Type Here")
+    variance = st.text_input("CSM Value", "Type Here")
+    skewness = st.text_input("CGMP Value", "Type Here")
+    curtosis = st.text_input("KGP Value", "Type Here")
+    entropy = st.text_input("CDP Value", "Type Here")
     result = ""
     if st.button("Predict"):
         result = predict_note_authentication(
             variance, skewness, curtosis, entropy)
-    st.success('The output is {}'.format(result))
+    st.success('The disease is {}'.format(result))
     if st.button("About"):
         st.text("Lets Learn")
         st.text("Built with Streamlit")
