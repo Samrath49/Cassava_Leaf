@@ -75,27 +75,24 @@ def main():
     st.text("  ")
     cbsd = (round(random.uniform(0, 0.69), 2))
     
-    file = st.file_uploader('Upload An Image')
-    dtype_file_structure_mapping = {
+    if st.file_uploader('Upload An Image'):
+      dtype_file_structure_mapping = {
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
-    }
-
-   
-    variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
-    skewness = st.text_input(
+      }
+      variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
+      skewness = st.text_input(
         "Cassava Brown Streak Disease (CBSD)", cbsd)
-    curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
-    entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
-    result = ""
-    
-
-    st.text(" ")
-    if st.button("Predict"):
-        result = predict_note_authentication(
-            variance, skewness, curtosis, entropy)
-    st.success('Prediction is {}'.format(result))
-    st.text(" ")
+      curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
+      entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
+      result = ""
+      st.text(" ")
+      if st.button("Predict"):
+          result = predict_note_authentication(
+              variance, skewness, curtosis, entropy)
+      st.success('Prediction is {}'.format(result))
+      st.text(" ")
+   
     if st.button("About"):
         st.text("PathoAI")
         st.text("Prediction 0 means it's a healthy leaf else it is unhealthy")
