@@ -48,6 +48,7 @@ def predict_note_authentication(variance, skewness, curtosis, entropy):
     print(prediction)
     return prediction
 
+
 def main():
     st.title("PathoAI")
     st.text("  ")
@@ -60,7 +61,6 @@ def main():
     """
     cgm = (round(random.uniform(0, 0.69), 2))
 
-
     instructions = """
     Either upload your own image or select from the sidebar to get a preconfigured image. 
     The image you select or upload will be fed through the Deep Neural Network in real-time 
@@ -70,29 +70,29 @@ def main():
     st.text("  ")
     st.write(instructions)
     st.text("  ")
-    
+
     st.markdown(html_temp, unsafe_allow_html=True)
     st.text("  ")
     cbsd = (round(random.uniform(0, 0.69), 2))
-    
+
     if st.file_uploader('Upload An Image'):
-      dtype_file_structure_mapping = {
-        'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
-        'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
-      }
-      variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
-      skewness = st.text_input(
-        "Cassava Brown Streak Disease (CBSD)", cbsd)
-      curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
-      entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
-      result = ""
-      st.text(" ")
-      if st.button("Predict"):
-          result = predict_note_authentication(
-              variance, skewness, curtosis, entropy)
-      st.success('Prediction is {}'.format(result))
-      st.text(" ")
-   
+        dtype_file_structure_mapping = {
+            'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
+            'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
+        }
+        variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
+        skewness = st.text_input(
+            "Cassava Brown Streak Disease (CBSD)", cbsd)
+        curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
+        entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
+        result = ""
+        st.text(" ")
+    if st.button("Predict"):
+        result = predict_note_authentication(
+            variance, skewness, curtosis, entropy)
+    st.success('Prediction is {}'.format(result))
+    st.text(" ")
+
     if st.button("About"):
         st.text("PathoAI")
         st.text("Prediction 0 means it's a healthy leaf else it is unhealthy")
