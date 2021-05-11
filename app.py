@@ -1,13 +1,9 @@
 import numpy as np
 import pickle
 import pandas as pd
-#from flasgger import Swagger
 import streamlit as st
-
+import random
 from PIL import Image
-
-# app=Flask(__name__)
-# Swagger(app)
 
 pickle_in = open("classifier.pkl", "rb")
 classifier = pickle.load(pickle_in)
@@ -51,7 +47,7 @@ def predict_note_authentication(variance, skewness, curtosis, entropy):
     prediction = classifier.predict([[variance, skewness, curtosis, entropy]])
     print(prediction)
     return prediction
-
+    cbb = round(random.random(), 2)
 
 def main():
     st.title("PathoAI")
@@ -62,6 +58,8 @@ def main():
     <h2 style="color:white;text-align:center;">Cassava Leaf Disease Detection ML App</h2>
     </div>
     """
+    cgm = round(random.random(), 2)
+
 
     instructions = """
     Either upload your own image or select from the sidebar to get a preconfigured image. 
@@ -69,8 +67,10 @@ def main():
     and the output will be displayed to the screen.
     """
     st.text("  ")
+    cmd = round(random.random(), 2)
     st.write(instructions)
     st.text("  ")
+    cbsd = round(random.random(), 2)
     
     st.markdown(html_temp, unsafe_allow_html=True)
     st.text("  ")
@@ -82,12 +82,13 @@ def main():
     }
 
    
-    variance = st.text_input("Cassava Bacterial Blight(CBB)", "Type Here")
+    variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
     skewness = st.text_input(
-        "Cassava Brown Streak Disease (CBSD)", "Type Here")
-    curtosis = st.text_input("Cassava Green Mottle (CGM)", "Type Here")
-    entropy = st.text_input("Cassava Mosaic Disease (CMD)", "Type Here")
+        "Cassava Brown Streak Disease (CBSD)", cbsd)
+    curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
+    entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
     result = ""
+    
 
     st.text(" ")
     if st.button("Predict"):
