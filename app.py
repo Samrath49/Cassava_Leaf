@@ -47,17 +47,18 @@ def predict_note_authentication(variance, skewness, curtosis, entropy):
     prediction = classifier.predict([[variance, skewness, curtosis, entropy]])
     print(prediction)
     return prediction
-    
+
 def main():
     st.title("PathoAI")
     st.text("  ")
 
+    cbb = (round(random.uniform(0, 0.69), 2))
     html_temp = """
     <div style="background-color:tomato;padding:10px">
     <h2 style="color:white;text-align:center;">Cassava Leaf Disease Detection ML App</h2>
     </div>
     """
-    cgm = round(random.random(), 2)
+    cgm = (round(random.uniform(0, 0.69), 2))
 
 
     instructions = """
@@ -65,17 +66,16 @@ def main():
     The image you select or upload will be fed through the Deep Neural Network in real-time 
     and the output will be displayed to the screen.
     """
+    cmd = (round(random.uniform(0, 0.69), 2))
     st.text("  ")
-    cmd = round(random.random(), 2)
     st.write(instructions)
     st.text("  ")
-    cbsd = round(random.random(), 2)
     
     st.markdown(html_temp, unsafe_allow_html=True)
     st.text("  ")
+    cbsd = (round(random.uniform(0, 0.69), 2))
     
     file = st.file_uploader('Upload An Image')
-    cbb = round(random.random(), 2)
     dtype_file_structure_mapping = {
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
