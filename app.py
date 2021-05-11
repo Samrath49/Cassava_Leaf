@@ -18,10 +18,10 @@ def welcome():
 
 
 def predict_note_authentication(variance, skewness, curtosis, entropy):
-    """Let's Authenticate the Banks Note 
+    """Let's Authenticate the Banks Note
     This is using docstrings for specifications.
     ---
-    parameters:  
+    parameters:
       - name: variance
         in: query
         type: number
@@ -62,8 +62,8 @@ def main():
     cgm = (round(random.uniform(0, 0.69), 2))
 
     instructions = """
-    Either upload your own image or select from the sidebar to get a preconfigured image. 
-    The image you select or upload will be fed through the Deep Neural Network in real-time 
+    Either upload your own image or select from the sidebar to get a preconfigured image.
+    The image you select or upload will be fed through the Deep Neural Network in real-time
     and the output will be displayed to the screen.
     """
     cmd = (round(random.uniform(0, 0.69), 2))
@@ -87,12 +87,12 @@ def main():
         entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
         result = ""
         st.text(" ")
+
     if st.button("Predict"):
         result = predict_note_authentication(
             variance, skewness, curtosis, entropy)
-    st.success('Prediction is {}'.format(result))
+        st.success('Prediction is {}'.format(result))
     st.text(" ")
-
     if st.button("About"):
         st.text("PathoAI")
         st.text("Prediction 0 means it's a healthy leaf else it is unhealthy")
