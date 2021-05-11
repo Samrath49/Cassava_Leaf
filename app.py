@@ -78,7 +78,6 @@ def main():
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
     }
 
-    st.image(file, caption="Uploaded Image")
     st.markdown(html_temp, unsafe_allow_html=True)
     st.markdown(html_temp, unsafe_allow_html=True)
     variance = st.text_input("Cassava Bacterial Blight(CBB)", "Type Here")
