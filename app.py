@@ -71,15 +71,17 @@ def main():
     st.text("  ")
     st.write(instructions)
     st.text("  ")
-
+    
+    st.markdown(html_temp, unsafe_allow_html=True)
+    st.text("  ")
+    
     file = st.file_uploader('Upload An Image')
     dtype_file_structure_mapping = {
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
     }
 
-    st.markdown(html_temp, unsafe_allow_html=True)
-    st.markdown(html_temp, unsafe_allow_html=True)
+   
     variance = st.text_input("Cassava Bacterial Blight(CBB)", "Type Here")
     skewness = st.text_input(
         "Cassava Brown Streak Disease (CBSD)", "Type Here")
