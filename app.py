@@ -47,8 +47,7 @@ def predict_note_authentication(variance, skewness, curtosis, entropy):
     prediction = classifier.predict([[variance, skewness, curtosis, entropy]])
     print(prediction)
     return prediction
-    cbb = round(random.random(), 2)
-
+    
 def main():
     st.title("PathoAI")
     st.text("  ")
@@ -76,6 +75,7 @@ def main():
     st.text("  ")
     
     file = st.file_uploader('Upload An Image')
+    cbb = round(random.random(), 2)
     dtype_file_structure_mapping = {
         'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
         'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
