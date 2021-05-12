@@ -80,18 +80,18 @@ def main():
             'All Images': 'consolidated', 'Images Used To Train The Model': 'train',
             'Images Used To Tune The Model': 'valid', 'Images The Model Has Never Seen': 'test'
         }
-        variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
-        skewness = st.text_input(
-            "Cassava Brown Streak Disease (CBSD)", cbsd)
-        curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
-        entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
-        result = ""
-        st.text(" ")
 
-    if st.button("Predict"):
-        result = predict_note_authentication(
-            variance, skewness, curtosis, entropy)
-        st.success('Prediction is {}'.format(result))
+        if st.button("Predict"):
+            variance = st.text_input("Cassava Bacterial Blight(CBB)", cbb)
+            skewness = st.text_input(
+                "Cassava Brown Streak Disease (CBSD)", cbsd)
+            curtosis = st.text_input("Cassava Green Mottle (CGM)", cgm)
+            entropy = st.text_input("Cassava Mosaic Disease (CMD)", cmd)
+            result = ""
+            st.text(" ")
+            result = predict_note_authentication(
+                variance, skewness, curtosis, entropy)
+            st.success('Prediction is {}'.format(result))
     st.text(" ")
     if st.button("About"):
         st.text("PathoAI")
